@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ListePersonneComponent } from './liste-personne.component';
 import {PersonneService} from "../../services/personne.service";
 import {DepartementService} from "../../services/departement.service";
@@ -77,13 +76,16 @@ describe('ListePersonneComponent', () => {
     const departement = new Departement(1,'ABJ',"Abidjan")
     const personne = [new Personne(1,"Diarra","Seydou",22,departement), new Personne(2,"Bamba","Wingnemila",24,departement)];
 
-    // Mocking: configurer la méthode getPersonnes pour renvoyer la valeur Mpersonne
+    // Mocking: configurer la méthode getPersonnes pour renvoyer la valeur personne
     personneServiceStub.getPersonnes.and.returnValue(of([personne]));
 
     // WHEN
+    //appel de la methode getListepersonne
     component.getListePersonne();
 
     // THEN
+    //Verification 
     expect(component.listePersonne).toEqual(personne);
   });
+  
 });

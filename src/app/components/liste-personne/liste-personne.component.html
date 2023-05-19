@@ -1,5 +1,4 @@
 <p-toast></p-toast>
-
 <div class="card">
   <p-toolbar>
     <div class="p-toolbar-group-left">
@@ -9,6 +8,7 @@
         icon="pi pi-plus"
         class="mr-2"
       ></p-button>
+
     </div>
     <div class="p-toolbar-group-right">
       <span class="p-input-icon-left mb-2 md:mb-0">
@@ -21,6 +21,7 @@
         />
       </span>
     </div>
+    
   </p-toolbar>
   <!-- Tableau affichant la liste des personnes  -->
   <p-table
@@ -34,7 +35,7 @@
     [globalFilterFields]="['nom','prenoms']"
     class="center"
   >
-    <ng-template pTemplate="header">
+  <ng-template pTemplate="header">
       <tr>
         <th>N°</th>
         <th pSortableColumn="nom">
@@ -57,6 +58,7 @@
         <td>{{ personne.age }}</td>
         <td>{{ personne.departement.designation | uppercase }}</td>
         <td>
+
           <button
             pButton
             pRipple
@@ -116,7 +118,7 @@
           'ng-dirty': prenomsInput.invalid && submitted
         }"
       />
-      <label htmlFor="prenoms">Premons</label>
+      <label htmlFor="prenoms">Prenom</label>
     </div>
     <br />
     <div class="p-float-label">
@@ -155,5 +157,4 @@
      (click)="savePersonne(personne.id, personne)"></button>
   </ng-template>
 </p-dialog>
-
 <p-confirmDialog [style]="{width: '250px'}"></p-confirmDialog>
